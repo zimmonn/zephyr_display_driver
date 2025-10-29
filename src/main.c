@@ -1,6 +1,4 @@
 /*
- * Copyright (c) 2019 Jan Van Winkel <jan.van_winkel@dxplore.eu>
- *
  * Based on ST7789V sample:
  * Copyright (c) 2019 Marc Reilly
  *
