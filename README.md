@@ -6,3 +6,5 @@ The project uses:
 
 Build with `$ west build -b xiao_ble`. 
 See `boards/` for overlay file. 
+
+![here should be picture of display :/](img/result.jpg)
