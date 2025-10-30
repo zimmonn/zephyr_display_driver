@@ -12,12 +12,11 @@
     mipi_dbi_st7789v {
         compatible = "zephyr,mipi-dbi-spi";
         spi-dev = <&xiao_spi>;
-        dc-gpios = <&gpio0 2 GPIO_ACTIVE_HIGH>;	/* D 0 */
-		reset-gpios = <&gpio0 3 GPIO_ACTIVE_LOW>;	/* D 1 */
+        dc-gpios = <&xiao_d 0 GPIO_ACTIVE_HIGH>;	/* D 0 */
+		reset-gpios = <&xiao_d 1 GPIO_ACTIVE_LOW>;	/* D 1 */
 		write-only;
 		#address-cells = <1>;
 		#size-cells = <0>;
-        status = "okay";
  
         st7789v_adafruit_240x135: st7789v@0 {
             compatible = "sitronix,st7789v";
@@ -33,12 +32,9 @@
 			vrhs = <0x0B>;
 			vdvs = <0x20>;
 			mdac = <0x00>;
-
 			gamma = <0x00>;
-
 			colmod = <0x55>;
 			lcm = <0x2c>;
-
 			porch-param = [0c 0c 00 33 33];
 			cmd2en-param = [5A 69 02 00];
 			pwctrl1-param = [A4 A1];
@@ -54,5 +50,5 @@
 };
 
 &xiao_spi {
-    cs-gpios = <&gpio0 28 GPIO_ACTIVE_LOW>; /* D 2 */
+    cs-gpios = <&xiao_d 2 GPIO_ACTIVE_LOW>; /* D 2 */
 };

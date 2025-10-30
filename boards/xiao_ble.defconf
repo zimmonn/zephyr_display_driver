@@ -1,0 +1,22 @@
+# SPDX-License-Identifier: Apache-2.0
+if DISPLAY
+
+choice ST7789V_PIXEL_FORMAT
+	default ST7789V_RGB565 
+endchoice
+
+if LVGL
+
+config LV_Z_BITS_PER_PIXEL
+	default 16
+
+choice LV_COLOR_DEPTH
+	default LV_COLOR_DEPTH_16
+endchoice
+
+#configdefault LV_COLOR_16_SWAP
+#	default y if SHIELD_ST7789V_WAVESHARE_240X240
+
+endif # LVGL
+
+endif # DISPLAY
